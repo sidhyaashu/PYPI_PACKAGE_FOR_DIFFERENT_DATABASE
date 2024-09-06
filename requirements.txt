@@ -1,0 +1,11 @@
+pymongo
+pinecone-client
+mysql-connector-python
+psycopg2-binary
+pymongo[srv]
+dnspython
+pandas
+numpy
+ensure
+
+-e .
