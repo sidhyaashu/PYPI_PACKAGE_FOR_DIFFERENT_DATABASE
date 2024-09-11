@@ -29,6 +29,19 @@ setup(
     package_dir={"": "src"},
     packages=find_packages(where="src"),
     python_requires='>=3.6',
+    install_requires=[
+        'pymongo',
+        'mysql-connector-python',
+        'psycopg2-binary',
+        'pinecone-client',
+    ],
+    extras_require={
+        'dev': [
+            'pytest',
+            'tox',
+            'flake8',
+        ],
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
@@ -39,4 +52,10 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    test_suite='tests',
+    entry_points={
+        'console_scripts': [
+            'multidbconnector=src.MultiDBConnector.cli:main',
+        ],
+    },
 )
